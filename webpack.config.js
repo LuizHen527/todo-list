@@ -15,7 +15,7 @@ export default {
     }),
   ],
 
-//   devtool: "eval-source-map",
+  devtool: "eval-source-map",
   devServer: {
     watchFiles: ["./src/index.html"]
   },
