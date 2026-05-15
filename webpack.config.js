@@ -17,7 +17,7 @@ export default {
 
   devtool: "eval-source-map",
   devServer: {
-    watchFiles: ["./src/index.html"]
+    watchFiles: ["./src/index.html", "./src/app.js"]
   },
 
   module: {
