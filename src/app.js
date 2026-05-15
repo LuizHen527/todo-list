@@ -1,1 +1,5 @@
-console.log("Salveeee");
+
+(function init(params) {
+        console.log("AAAAAAAAAa");
+})()
+    
