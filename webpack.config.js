@@ -1,5 +1,7 @@
 import path from "node:path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import test from "node:test";
+import { type } from "node:os";
 
 export default {
   mode: "development",
@@ -15,9 +17,9 @@ export default {
     }),
   ],
 
-  devtool: "eval-source-map",
+//   devtool: "eval-source-map",
   devServer: {
-    watchFiles: ["./src/index.html", "./src/app.js"]
+    watchFiles: ["./src/index.html"]
   },
 
   module: {

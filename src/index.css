@@ -2,6 +2,10 @@
     background-color: gray;
 }
 
+.row {
+    display: flex;
+}
+
 .head__sprite {
     width: 100px;
 }
