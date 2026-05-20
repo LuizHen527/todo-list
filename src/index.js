@@ -2,7 +2,8 @@ import './styles.css';
 
 (function init(params) {
         
-        mainPage()
+        console.log("aa");
+        
         
 })()
     
