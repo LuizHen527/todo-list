@@ -1,8 +1,8 @@
-import './index.css';
+import './styles.css';
 
 (function init(params) {
-        console.log("aaa");
         
+        mainPage()
         
 })()
     
