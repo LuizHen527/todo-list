@@ -1,3 +1,4 @@
+
 /**
  *
  * @param {Number} headingNumber - Number of the heading. Ex: 1 for h1, 2 for h2...
@@ -8,6 +9,13 @@ const createHeading = (headingNumber, innerText) => {
   heading.innerText = innerText;
   return heading;
 };
+
+const createButton = (innerText) => {
+    const button = document.createElement('button');
+    button.innerText = innerText;
+
+    return button
+}
 
 /**
  *
@@ -65,10 +73,10 @@ const createHeader = () => {
  */
 const createActionBar = () => {
     const element = document.createElement('div');
-    const deleteTodoButton = document.createElement('button');
-    const createTodoButton = document.createElement('button');
-    const editTodoButton = document.createElement('button');
-    const myLevelButton = document.createElement('button');
+    const deleteTodoButton = createButton('delete todo');
+    const createTodoButton = createButton('create todo');
+    const editTodoButton = createButton('edit todo');
+    const myLevelButton = createButton('my level');
 
     
 
