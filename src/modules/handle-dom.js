@@ -108,4 +108,9 @@ const deleteMainElements = () => {
   mainElement.innerHTML = "";
 };
 
+const deleteHeaderElements = () => {
+    const headerElement = document.querySelector("header");
+    headerElement.innerHTML = "";
+}
+
 export { createHeading, createProjectListItem, deleteMainElements, createHeader, createActionBar };
