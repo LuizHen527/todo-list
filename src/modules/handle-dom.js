@@ -13,11 +13,16 @@ const createHeading = (headingNumber, innerText) => {
 /**
  * 
  * @param {String} innerText 
- * @returns {HTMLButtonElement} button element
+ * @param {Function} onClickFunction
+ * @returns {HTMLButtonElement}
  */
-const createButton = (innerText) => {
+const createButton = (innerText, onClickFunction) => {
     const button = document.createElement('button');
     button.innerText = innerText;
+
+    if(onClickFunction) {
+        button.addEventListener('click', onClickFunction)
+    }
 
     return button
 }
