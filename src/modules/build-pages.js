@@ -1,4 +1,4 @@
-import { createHeader, createHeading, createProjectListItem, deleteMainElements } from "./handle-dom.js"
+import { createActionBar, createHeader, createHeading, createProjectListItem, deleteMainElements } from "./handle-dom.js"
 
 
 const buildProjectPage = () => {
@@ -23,6 +23,8 @@ const buildTodoList = () => {
     deleteMainElements()
 
     createHeader()
+
+    createActionBar()
 }
 
 export {

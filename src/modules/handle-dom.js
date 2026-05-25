@@ -37,7 +37,7 @@ const createProjectListItem = (projectName, todoCount) => {
 
 
 /**
- * Create dialog box and the head sprite
+ * Create dialog box and the head sprite and append to header
  */
 const createHeader = () => {
   const element = document.createElement("div");
@@ -57,8 +57,28 @@ const createHeader = () => {
   element.appendChild(head);
   dialogBox.appendChild(dialog);
 
-  document.querySelector("main").appendChild(element);
+  document.querySelector("header").appendChild(element);
 };
+
+/**
+ * Create Action bar with all the buttons and append to header
+ */
+const createActionBar = () => {
+    const element = document.createElement('div');
+    const deleteTodoButton = document.createElement('button');
+    const createTodoButton = document.createElement('button');
+    const editTodoButton = document.createElement('button');
+    const myLevelButton = document.createElement('button');
+
+    
+
+    element.appendChild(deleteTodoButton);
+    element.appendChild(createTodoButton);
+    element.appendChild(editTodoButton);
+    element.appendChild(myLevelButton);
+
+    document.querySelector("header").appendChild(element);
+}
 
 /**
  * Delete elements inside the main HTML tag
@@ -68,4 +88,4 @@ const deleteMainElements = () => {
   mainElement.innerHTML = "";
 };
 
-export { createHeading, createProjectListItem, deleteMainElements, createHeader };
+export { createHeading, createProjectListItem, deleteMainElements, createHeader, createActionBar };
