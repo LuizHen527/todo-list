@@ -16,10 +16,19 @@ const createHeading = (headingNumber, innerText) => {
  * @param {String} projectName - Project title
  * @param {Number} todoCount - Todo item count
  */
-const createProjectListItem = (projectName, todoCount, ...classList) => {
+const createProjectListItem = (projectName, todoCount) => {
+    
     const element = document.createElement('div');
     const title = document.createElement('p');
     const itensCount = document.createElement('p');
+
+    element.classList = 'gray row project-item';
+    element.id = projectName;
+
+    element.addEventListener('click', () => {
+        console.log(`click ${element.id}`);
+        
+    })
 
     title.innerText = projectName;
     itensCount.innerText = todoCount;

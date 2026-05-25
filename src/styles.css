@@ -1,11 +1,31 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* colors and sizes here */
+    --black: #121212;
+}
+
 .container {
-    background-color: gray;
+    width: 90%;
+    margin: 0 auto;
 }
 
 .row {
     display: flex;
 }
 
-.head__sprite {
-    width: 100px;
+.project-item {
+    margin-bottom: 10px;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.gray {
+    background-color: gray;
 }

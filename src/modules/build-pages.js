@@ -5,7 +5,7 @@ const buildProjectPage = () => {
     let fragment = document.createDocumentFragment();
 
     const heading = createHeading(1, "My projects");
-    const projectItem = createProjectListItem("Home Tasks", 5);
+    const projectItem = createProjectListItem("Home Tasks", 5, 'gray', 'border');
     const projectItem1 = createProjectListItem("School Tasks", 2);
     const projectItem2 = createProjectListItem("Art", 3);
     const projectItem3 = createProjectListItem("Personal Tasks", 4);
