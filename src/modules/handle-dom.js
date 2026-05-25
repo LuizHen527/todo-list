@@ -78,10 +78,11 @@ const createHeader = () => {
  */
 const createActionBar = () => {
     const element = document.createElement('div');
-    const deleteTodoButton = createButton('delete todo');
-    const createTodoButton = createButton('create todo');
-    const editTodoButton = createButton('edit todo');
-    const myLevelButton = createButton('my level');
+    const deleteTodoButton = createButton('Delete List');
+    const createTodoButton = createButton('Create List');
+    const editTodoButton = createButton('Edit List');
+    const myLevelButton = createButton('My Level');
+    const goToProjectsButton = createButton('My Projects');
 
     
 
@@ -89,6 +90,7 @@ const createActionBar = () => {
     element.appendChild(createTodoButton);
     element.appendChild(editTodoButton);
     element.appendChild(myLevelButton);
+    element.appendChild(goToProjectsButton);
 
     document.querySelector("header").appendChild(element);
 }
