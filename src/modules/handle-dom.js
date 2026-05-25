@@ -40,7 +40,13 @@ const createProjectListItem = (projectName, todoCount) => {
 
 }
 
+const deleteMainElements = () => {
+    const mainElement = document.querySelector('main');
+    mainElement.innerHTML = '';
+}
+
 export {
     createHeading,
     createProjectListItem,
+    deleteMainElements,
 }
