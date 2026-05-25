@@ -26,6 +26,25 @@
     cursor: pointer;
 }
 
+.dialog {
+    justify-content: space-between;
+}
+
+.dialog__head {
+    width: 100px;
+    height: 100px;
+    background-color: purple;
+}
+
+.dialog__para-box {
+    width: 70%;
+    background-color: burlywood;
+}
+
+.para-box__para {
+    height: 100%;
+}
+
 .gray {
     background-color: gray;
 }

@@ -1,4 +1,4 @@
-import { createHeading, createProjectListItem } from "./handle-dom.js"
+import { createHeader, createHeading, createProjectListItem, deleteMainElements } from "./handle-dom.js"
 
 
 const buildProjectPage = () => {
@@ -19,6 +19,12 @@ const buildProjectPage = () => {
     document.getElementsByTagName('main')[0].append(fragment)
 }
 
+const buildTodoList = () => {
+    deleteMainElements()
+
+    createHeader()
+}
+
 export {
-    buildProjectPage
+    buildProjectPage, buildTodoList
 }
