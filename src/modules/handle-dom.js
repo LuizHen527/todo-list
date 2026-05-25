@@ -1,3 +1,4 @@
+import { buildProjectPage } from "./build-pages.js";
 
 /**
  *
@@ -87,7 +88,7 @@ const createActionBar = () => {
     const createTodoButton = createButton('Create List');
     const editTodoButton = createButton('Edit List');
     const myLevelButton = createButton('My Level');
-    const goToProjectsButton = createButton('My Projects');
+    const goToProjectsButton = createButton('My Projects', buildProjectPage);
 
     
 
@@ -113,4 +114,4 @@ const deleteHeaderElements = () => {
     headerElement.innerHTML = "";
 }
 
-export { createHeading, createProjectListItem, deleteMainElements, createHeader, createActionBar };
+export { createHeading, createProjectListItem, deleteMainElements, createHeader, createActionBar, deleteHeaderElements };
