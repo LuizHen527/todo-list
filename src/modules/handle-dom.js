@@ -10,6 +10,11 @@ const createHeading = (headingNumber, innerText) => {
   return heading;
 };
 
+/**
+ * 
+ * @param {String} innerText 
+ * @returns {HTMLButtonElement} button element
+ */
 const createButton = (innerText) => {
     const button = document.createElement('button');
     button.innerText = innerText;
