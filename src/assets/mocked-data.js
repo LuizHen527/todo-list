@@ -7,6 +7,10 @@ export default {
         {
             "id": "22735",
             "name": "career"
+        },
+        {
+            "id": "7765",
+            "name": "hobbies"
         }
     ],
 

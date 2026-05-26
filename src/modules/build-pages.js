@@ -1,9 +1,11 @@
 import { createActionBar, createHeader, createHeading, createProjectListItem, deleteHeaderElements, deleteMainElements } from "./handle-dom.js"
+import { getProjects } from "./handle-projects.js"
 
 
 const buildProjectPage = () => {
     deleteHeaderElements()
     deleteMainElements()
+    getProjects()
 
     let fragment = document.createDocumentFragment();
 
