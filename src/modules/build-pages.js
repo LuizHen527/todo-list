@@ -1,10 +1,10 @@
 import { createActionBar, createHeader, createHeading, createProjectListItem, deleteHeaderElements, deleteMainElements } from "./handle-dom.js"
-import { getProjects } from "./handle-fields.js"
+import { getFields } from "./handle-fields.js"
 import { getFieldNumberTasks } from "./handle-tasks.js";
 
 
-const buildProjectPage = () => {
-    const projects = getProjects();
+const buildFieldPage = () => {
+    const fields = getFields();
     console.log(getFieldNumberTasks("29382"));
 
     deleteHeaderElements();
@@ -12,12 +12,12 @@ const buildProjectPage = () => {
 
     let fragment = document.createDocumentFragment();
 
-    const heading = createHeading(1, "My projects");
+    const heading = createHeading(1, "Fields");
     fragment.appendChild(heading);
 
-    projects.forEach(project => {
-        const projectElement = createProjectListItem(project.name, 5, 'gray', 'border');
-        fragment.appendChild(projectElement);
+    fields.forEach(field => {
+        const fieldElement = createProjectListItem(field.name, getFieldNumberTasks(field.id), 'gray', 'border');
+        fragment.appendChild(fieldElement);
     });
 
     document.getElementsByTagName('main')[0].append(fragment);
@@ -32,5 +32,5 @@ const buildTodoList = () => {
 }
 
 export {
-    buildProjectPage, buildTodoList
+    buildFieldPage, buildTodoList
 }

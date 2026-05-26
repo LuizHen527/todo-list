@@ -1,4 +1,4 @@
-import { buildProjectPage } from "./build-pages.js";
+import { buildFieldPage } from "./build-pages.js";
 
 /**
  *
@@ -88,7 +88,7 @@ const createActionBar = () => {
     const createTodoButton = createButton('Create List');
     const editTodoButton = createButton('Edit List');
     const myLevelButton = createButton('My Level');
-    const goToProjectsButton = createButton('My Projects', buildProjectPage);
+    const goToProjectsButton = createButton('My Projects', buildFieldPage);
 
     
 

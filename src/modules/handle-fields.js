@@ -1,10 +1,10 @@
 import data from "../assets/mocked-data.js"
 
-const getProjects = () => {
+const getFields = () => {
 
     return data.fields;
 }
 
 export {
-    getProjects
+    getFields
 }
