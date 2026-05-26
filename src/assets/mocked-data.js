@@ -1,22 +1,4 @@
 export default {
-    "field": {
-        "general": {
-            "quests": {
-                "clean room": {
-                    "tasks": [
-                        {
-                            "title": "Clean bed",
-                            "description": ""
-                        }
-                    ]
-                }
-            }
-        },
-        "career": {
-
-        }
-    },
-
     "fields": [
         {
             "id": "29382",
