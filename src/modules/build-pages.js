@@ -1,5 +1,5 @@
 import { createActionBar, createHeader, createHeading, createProjectListItem, deleteHeaderElements, deleteMainElements } from "./handle-dom.js"
-import { getProjects } from "./handle-projects.js"
+import { getProjects } from "./handle-fields.js"
 
 
 const buildProjectPage = () => {
