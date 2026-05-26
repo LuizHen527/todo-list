@@ -1,9 +1,11 @@
 import { createActionBar, createHeader, createHeading, createProjectListItem, deleteHeaderElements, deleteMainElements } from "./handle-dom.js"
 import { getProjects } from "./handle-fields.js"
+import { getFieldNumberTasks } from "./handle-tasks.js";
 
 
 const buildProjectPage = () => {
     const projects = getProjects();
+    console.log(getFieldNumberTasks("29382"));
 
     deleteHeaderElements();
     deleteMainElements();

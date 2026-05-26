@@ -26,6 +26,12 @@ export default {
             "fieldId": "29382",
             "name": "buy new clothes",
             "finished": false
+        },
+        {
+            "id": "9889",
+            "fieldId": "7765",
+            "name": "Organize collection of books",
+            "finished": false
         }
     ],
 
