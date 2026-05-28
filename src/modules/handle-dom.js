@@ -116,6 +116,39 @@ const createActionBar = (buttonConfig) => {
     document.querySelector("header").appendChild(element);
 }
 
+
+const createQuestListItem = (questName, taskNumber) => {
+  const element = document.createElement('div');
+  const paraName = document.createElement('p');
+  const paraNumber = document.createElement('p');
+
+  paraName.innerText = questName;
+  paraNumber.innerText = taskNumber;
+
+  element.appendChild(paraName);
+  element.appendChild(paraNumber);
+  
+  return element
+}
+
+/**
+ * 
+ * @param {Array} quests - Array with quest objects
+ */
+const createQuestElements = (quests) => {
+  // Fazer um loop que percorre quests 
+  // Para cada objecto criar um elemento 
+
+  let fragment = document.createDocumentFragment();
+
+  quests.forEach(quest => {
+        const questElement = createQuestListItem(quest.name, 4);
+        fragment.appendChild(questElement);
+    });
+
+  document.getElementsByTagName('main')[0].append(fragment);
+}
+
 /**
  * Delete elements inside the main HTML tag
  */
@@ -129,4 +162,12 @@ const deleteHeaderElements = () => {
     headerElement.innerHTML = "";
 }
 
-export { createHeading, createProjectListItem, deleteMainElements, createHeader, createActionBar, deleteHeaderElements };
+export { 
+  createHeading, 
+  createProjectListItem, 
+  deleteMainElements, 
+  createHeader, 
+  createActionBar, 
+  deleteHeaderElements, 
+  createQuestElements 
+};
