@@ -4,7 +4,7 @@ import data from "../assets/mocked-data.js"
  * 
  * @param {String} fieldId
  */
-const getFieldNumberTasks = (fieldId) => {
+const getNumberTasksByField = (fieldId) => {
     let tasks = data.tasks;
     let sumTasks = 0;
 
@@ -21,5 +21,5 @@ const getFieldNumberTasks = (fieldId) => {
 }
 
 export {
-    getFieldNumberTasks
+    getNumberTasksByField
 }
