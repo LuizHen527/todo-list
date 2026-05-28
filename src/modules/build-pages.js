@@ -1,5 +1,6 @@
-import { createActionBar, createHeader, createHeading, createProjectListItem, deleteHeaderElements, deleteMainElements } from "./handle-dom.js"
+import { createActionBar, createHeader, createHeading, createProjectListItem, createQuestElements, deleteHeaderElements, deleteMainElements } from "./handle-dom.js"
 import { getFields } from "./handle-fields.js"
+import { getQuestsByFieldId } from "./handle-quests.js";
 import { getFieldNumberTasks } from "./handle-tasks.js";
 
 
@@ -16,7 +17,7 @@ const buildFieldPage = () => {
     fragment.appendChild(heading);
 
     fields.forEach(field => {
-        const fieldElement = createProjectListItem(field.name, getFieldNumberTasks(field.id), 'gray', 'border');
+        const fieldElement = createProjectListItem(field.name, getFieldNumberTasks(field.id), field.id);
         fragment.appendChild(fieldElement);
     });
 
@@ -24,13 +25,32 @@ const buildFieldPage = () => {
 }
 
 const buildTodoList = () => {
-    deleteMainElements()
+    deleteMainElements();
 
-    createHeader()
+    createHeader();
 
-    createActionBar()
+    createActionBar("todo_page");
+}
+
+/**
+ * 
+ * @param {String} fieldId 
+ */
+const buildQuestPage = (fieldId) => {
+    const quests = getQuestsByFieldId(fieldId);
+
+    deleteMainElements();
+
+    createHeader();
+
+    createActionBar("quest_page");
+
+    createQuestElements(quests)
+
 }
 
 export {
-    buildFieldPage, buildTodoList
+    buildFieldPage,
+    buildTodoList,
+    buildQuestPage,
 }
