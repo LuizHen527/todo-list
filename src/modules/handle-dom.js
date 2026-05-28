@@ -1,14 +1,16 @@
 import { buildFieldPage, buildQuestPage } from "./build-pages.js";
+import { getNumberTasksByQuest } from "./handle-tasks.js";
 
 /**
  *
  * @param {Number} headingNumber - Number of the heading. Ex: 1 for h1, 2 for h2...
  * @param {String} innerText - Text inside the element
+ * @param {HTMLElement} fatherElement - Element to append the heading
  */
-const createHeading = (headingNumber, innerText) => {
+const createHeading = (headingNumber, innerText, fatherElement) => {
   const heading = document.createElement(`h${headingNumber}`);
   heading.innerText = innerText;
-  return heading;
+  fatherElement.appendChild(heading);
 };
 
 /**
@@ -146,7 +148,7 @@ const createQuestElements = (quests) => {
   let fragment = document.createDocumentFragment();
 
   quests.forEach(quest => {
-        const questElement = createQuestListItem(quest.name, 4);
+        const questElement = createQuestListItem(quest.name, getNumberTasksByQuest(quest.id));
         fragment.appendChild(questElement);
     });
 
