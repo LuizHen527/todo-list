@@ -1,4 +1,4 @@
-import { buildFieldPage } from "./build-pages.js";
+import { buildFieldPage, buildQuestPage } from "./build-pages.js";
 
 /**
  *
@@ -81,22 +81,37 @@ const createHeader = () => {
 
 /**
  * Create Action bar with all the buttons and append to header
+ * @param {String} buttonConfig - Select which buttons you want according to the page
  */
-const createActionBar = () => {
+const createActionBar = (buttonConfig) => {
+    let addButton;
+    let editButton;
+    let deleteButton;
+    let goBackButton;
+
     const element = document.createElement('div');
-    const deleteTodoButton = createButton('Delete List');
-    const createTodoButton = createButton('Create List');
-    const editTodoButton = createButton('Edit List');
     const myLevelButton = createButton('My Level');
-    const goToProjectsButton = createButton('My Projects', buildFieldPage);
-
     
+    if(buttonConfig === "todo_page") {
+      addButton = createButton(`Add List`);
+      editButton = createButton('Edit List');
+      deleteButton = createButton('Delete List');
+      goBackButton = createButton('Go back', buildQuestPage);
+   
+    } else if(buttonConfig === "quest_page") {
+      addButton = createButton('Add quest');
+      editButton = createButton('Edit quest');
+      deleteButton = createButton('Delete quest');
+      goBackButton = createButton('Go back', buildFieldPage);
 
-    element.appendChild(deleteTodoButton);
-    element.appendChild(createTodoButton);
-    element.appendChild(editTodoButton);
+    }
+
+    element.appendChild(goBackButton);
+    element.appendChild(addButton);
+    element.appendChild(editButton);
+    element.appendChild(deleteButton);
     element.appendChild(myLevelButton);
-    element.appendChild(goToProjectsButton);
+
 
     document.querySelector("header").appendChild(element);
 }
