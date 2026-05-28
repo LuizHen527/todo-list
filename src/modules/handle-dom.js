@@ -20,6 +20,7 @@ const createHeading = (headingNumber, innerText) => {
 const createButton = (innerText, onClickFunction) => {
     const button = document.createElement('button');
     button.innerText = innerText;
+    button.classList = 'button';
 
     if(onClickFunction) {
         button.addEventListener('click', onClickFunction)
@@ -30,25 +31,26 @@ const createButton = (innerText, onClickFunction) => {
 
 /**
  *
- * @param {String} projectName - Project title
+ * @param {String} fieldName
  * @param {Number} todoCount - Todo item count
+ * @param {Number} fieldId
  */
-const createProjectListItem = (projectName, todoCount) => {
+const createProjectListItem = (fieldName, todoCount, fieldId) => {
   const element = document.createElement("div");
   const title = document.createElement("p");
   const itensCount = document.createElement("p");
 
   element.classList = "gray row project-item";
-  element.id = projectName;
+  element.id = fieldId;
 
-  title.innerText = projectName;
+  title.innerText = fieldName;
   itensCount.innerText = todoCount;
 
   element.appendChild(title);
   element.appendChild(itensCount);
 
   element.addEventListener("click", () => {
-    console.log(`click ${element.id}`);
+    buildQuestPage(fieldId);
   });
 
   return element;
@@ -121,6 +123,8 @@ const createQuestListItem = (questName, taskNumber) => {
   const element = document.createElement('div');
   const paraName = document.createElement('p');
   const paraNumber = document.createElement('p');
+
+  element.classList = 'gray row project-item'
 
   paraName.innerText = questName;
   paraNumber.innerText = taskNumber;
