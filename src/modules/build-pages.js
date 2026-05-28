@@ -12,8 +12,7 @@ const buildFieldPage = () => {
 
     let fragment = document.createDocumentFragment();
 
-    const heading = createHeading(1, "Fields");
-    fragment.appendChild(heading);
+    createHeading(1, "Fields", fragment);
 
     fields.forEach(field => {
         const fieldElement = createProjectListItem(field.name, getNumberTasksByField(field.id), field.id);
