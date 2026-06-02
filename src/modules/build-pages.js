@@ -22,10 +22,12 @@ const buildFieldPage = () => {
     document.getElementsByTagName('main')[0].append(fragment);
 }
 
-const buildTodoList = () => {
+/**
+ * 
+ * @param {String} questId 
+ */
+const buildTodoList = (questId) => {
     deleteMainElements();
-
-    createHeader();
 
     createActionBar("todo_page");
 }

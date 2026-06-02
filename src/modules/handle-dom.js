@@ -1,4 +1,4 @@
-import { buildFieldPage, buildQuestPage } from "./build-pages.js";
+import { buildFieldPage, buildQuestPage, buildTodoList } from "./build-pages.js";
 import { getNumberTasksByQuest } from "./handle-tasks.js";
 
 /**
@@ -148,9 +148,11 @@ const createQuestElements = (quests) => {
   let fragment = document.createDocumentFragment();
 
   quests.forEach(quest => {
-        const questElement = createQuestListItem(quest.name, getNumberTasksByQuest(quest.id));
-        fragment.appendChild(questElement);
-    });
+    const questElement = createQuestListItem(quest.name, getNumberTasksByQuest(quest.id));
+    questElement.addEventListener("click", () => buildTodoList(quest.id));
+
+    fragment.appendChild(questElement);
+  });
 
   document.getElementsByTagName('main')[0].append(fragment);
 }
