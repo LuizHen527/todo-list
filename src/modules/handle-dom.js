@@ -86,27 +86,29 @@ const createHeader = () => {
 /**
  * Create Action bar with all the buttons and append to header
  * @param {String} buttonConfig - Select which buttons you want according to the page
+ * @param {Function} goBackFunction - Go back button function
  */
-const createActionBar = (buttonConfig) => {
+const createActionBar = (buttonConfig, goBackFunction) => {
     let addButton;
     let editButton;
     let deleteButton;
     let goBackButton;
 
     const element = document.createElement('div');
+    element.classList = "action-bar"
     const myLevelButton = createButton('My Level');
     
     if(buttonConfig === "todo_page") {
-      addButton = createButton(`Add List`);
-      editButton = createButton('Edit List');
-      deleteButton = createButton('Delete List');
-      goBackButton = createButton('Go back', buildQuestPage);
+      addButton = createButton(`Add Task`);
+      editButton = createButton('Edit Task');
+      deleteButton = createButton('Delete Task');
+      goBackButton = createButton('Go back', goBackFunction);
    
     } else if(buttonConfig === "quest_page") {
       addButton = createButton('Add quest');
       editButton = createButton('Edit quest');
       deleteButton = createButton('Delete quest');
-      goBackButton = createButton('Go back', buildFieldPage);
+      goBackButton = createButton('Go back', goBackFunction);
 
     }
 
