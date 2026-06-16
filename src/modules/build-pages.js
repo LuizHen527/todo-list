@@ -24,16 +24,6 @@ const buildFieldPage = () => {
 
 /**
  * 
- * @param {String} questId 
- */
-const buildTodoList = (questId) => {
-    deleteMainElements();
-
-    createActionBar("todo_page");
-}
-
-/**
- * 
  * @param {String} fieldId 
  */
 const buildQuestPage = (fieldId) => {
@@ -47,6 +37,16 @@ const buildQuestPage = (fieldId) => {
 
     createQuestElements(quests)
 
+}
+
+/**
+ * 
+ * @param {String} questId 
+ */
+const buildTodoList = (questId) => {
+    deleteMainElements();
+
+    createActionBar("todo_page");
 }
 
 export {
