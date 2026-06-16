@@ -28,6 +28,14 @@ const getNumberTasksByQuest = (questId) => {
     return matchedTasks.length
 }
 
+const getTaskByQuestId = (questId) => {
+    let tasks = data.tasks;
+
+    let matchedTasks = tasks.filter(task => task.questId === questId);
+
+    return matchedTasks;
+}
+
 export {
     getNumberTasksByField,
     getNumberTasksByQuest,
