@@ -39,4 +39,5 @@ const getTaskByQuestId = (questId) => {
 export {
     getNumberTasksByField,
     getNumberTasksByQuest,
+    getTaskByQuestId,
 }

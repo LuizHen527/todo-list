@@ -122,7 +122,13 @@ const createActionBar = (buttonConfig, goBackFunction) => {
     document.querySelector("header").appendChild(element);
 }
 
-
+/**
+ * 
+ * @param {*} questName 
+ * @param {*} taskNumber 
+ * @returns Quest list item
+ * Create a element with the name of the quest
+ */
 const createQuestListItem = (questName, taskNumber) => {
   const element = document.createElement('div');
   const paraName = document.createElement('p');
@@ -142,6 +148,7 @@ const createQuestListItem = (questName, taskNumber) => {
 /**
  * 
  * @param {Array} quests - Array with quest objects
+ * Create the list of quests on the quest page
  */
 const createQuestElements = (quests) => {
   // Fazer um loop que percorre quests 

@@ -1,7 +1,7 @@
 import { createActionBar, createHeader, createHeading, createProjectListItem, createQuestElements, deleteHeaderElements, deleteMainElements } from "./handle-dom.js"
 import { getFieldIdByQuestId, getFields } from "./handle-fields.js"
 import { getQuestsByFieldId } from "./handle-quests.js";
-import { getNumberTasksByField } from "./handle-tasks.js";
+import { getNumberTasksByField, getTaskByQuestId } from "./handle-tasks.js";
 
 
 const buildFieldPage = () => {
@@ -57,16 +57,17 @@ const buildQuestPage = (fieldId) => {
 const buildTodoList = (questId) => {
     deleteMainElements();
     
-    const actionBar = document.querySelector('.action-bar');
+    const haveActionBar = document.querySelector('.action-bar');
     
-    if (actionBar) {
-        actionBar.remove()
+    if (haveActionBar) {
+        haveActionBar.remove()
     }
 
     const fieldId = getFieldIdByQuestId(questId);
     
-
     createActionBar("todo_page", function(){ return buildQuestPage(fieldId)});
+
+    console.log(getTaskByQuestId(questId))
 }
 
 export {
