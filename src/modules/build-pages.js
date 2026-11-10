@@ -5,7 +5,7 @@ import { getNumberTasksByField, getTaskByQuestId } from "./handle-tasks.js";
 
 
 const buildFieldPage = () => {
-    const fields = getFields();
+    // const fields = getFields();
 
     deleteHeaderElements();
     deleteMainElements();
@@ -14,12 +14,14 @@ const buildFieldPage = () => {
 
     createHeading(1, "Fields", fragment);
 
-    fields.forEach(field => {
-        const fieldElement = createProjectListItem(field.name, getNumberTasksByField(field.id), field.id);
-        fragment.appendChild(fieldElement);
-    });
+    // fields.forEach(field => {
+    //     const fieldElement = createProjectListItem(field.name, getNumberTasksByField(field.id), field.id);
+    //     fragment.appendChild(fieldElement);
+    // });
 
     document.getElementsByTagName('main')[0].append(fragment);
+
+    createActionBar()
 }
 
 /**

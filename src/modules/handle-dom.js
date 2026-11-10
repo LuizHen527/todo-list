@@ -90,36 +90,21 @@ const createHeader = () => {
  */
 const createActionBar = (buttonConfig, goBackFunction) => {
     let addButton;
-    let editButton;
-    let deleteButton;
     let goBackButton;
 
     const element = document.createElement('div');
     element.classList = "action-bar"
-    const myLevelButton = createButton('My Level');
-    
-    if(buttonConfig === "todo_page") {
-      addButton = createButton(`Add Task`);
-      editButton = createButton('Edit Task');
-      deleteButton = createButton('Delete Task');
-      goBackButton = createButton('Go back', goBackFunction);
-   
-    } else if(buttonConfig === "quest_page") {
-      addButton = createButton('Add quest');
-      editButton = createButton('Edit quest');
-      deleteButton = createButton('Delete quest');
-      goBackButton = createButton('Go back', goBackFunction);
 
+    addButton = createButton('New');
+    
+    if(buttonConfig === "new_and_go_back") {
+      goBackButton = createButton('Go back', goBackFunction);
+      element.appendChild(goBackButton);
     }
 
-    element.appendChild(goBackButton);
     element.appendChild(addButton);
-    element.appendChild(editButton);
-    element.appendChild(deleteButton);
-    element.appendChild(myLevelButton);
 
-
-    document.querySelector("header").appendChild(element);
+    document.querySelector("main").appendChild(element);
 }
 
 /**
@@ -143,6 +128,10 @@ const createQuestListItem = (questName, taskNumber) => {
   element.appendChild(paraNumber);
   
   return element
+}
+
+const createTaskListItem = () => {
+  
 }
 
 /**
@@ -177,6 +166,10 @@ const deleteMainElements = () => {
 const deleteHeaderElements = () => {
     const headerElement = document.querySelector("header");
     headerElement.innerHTML = "";
+}
+
+const createModalNewField = () => {
+  
 }
 
 export { 
